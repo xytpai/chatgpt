@@ -69,6 +69,7 @@ class GPT(nn.Module):
 
         self.lm_head = nn.Linear(config.hidden_size, config.vocab_size, bias=False)
         self.word_embeddings.weight = self.lm_head.weight
+        assert id(self.word_embeddings.weight.storage()) == id(self.lm_head.weight.storage())
 
         self.apply(self._init_weights)
         for pn, p in self.named_parameters():
