@@ -119,8 +119,8 @@ class GPT(nn.Module):
                 output[output < v[:, [-1]]] = -float('Inf')
             idx_next = torch.multinomial(F.softmax(output, dim=-1), num_samples=1) # b
             # append sampled index to the running sequence and continue
-            idx = torch.cat((idx, idx_next), dim=1)
-        return idx
+            input_ids = torch.cat((input_ids, idx_next), dim=1)
+        return input_ids
 
 
 if __name__ == '__main__':
@@ -138,3 +138,5 @@ if __name__ == '__main__':
     pred, loss = model(fake_input, masked_lm_labels)
     print(loss)
     loss.backward()
+    idxs = model.generate(fake_input, 20, 1.0, 100)
+    print(idxs.shape, idxs)
