@@ -134,7 +134,7 @@ def create_training_instances(input_files, tokenizer, max_seq_length,
 
 
 if __name__ == '__main__':
-    tokenizer = tokenization.FullTokenizer('./datasets/multilingual-cased-vocab.txt')
+    tokenizer = tokenization.FullTokenizer('vocab.txt')
     rng = random.Random(0)
     create_training_instances(
         ['./datasets/authorliu/results/pretrain-part-00000.txt'],

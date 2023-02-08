@@ -385,7 +385,7 @@ def _is_punctuation(char):
 
 # Just an example to use tokenizer
 if __name__ == '__main__':
-    tokenizer = FullTokenizer('datasets/multilingual-cased-vocab.txt')
+    tokenizer = FullTokenizer('vocab.txt')
     text = \
 """
 乔治·华盛顿（George Washington，1732年2月22日—1799年12月14日）， [1]  美国政治家、军事家、革命家，首任总统，美国开国元勋之一。 [2] 

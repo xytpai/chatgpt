@@ -4,7 +4,7 @@ Unofficial implementation of ChatGPT with minimize code
 #### 1. Create wiki dataset:
 
 ```bash
-export WIKI_ROOT=/data
+export WIKI_ROOT=/data # Use absolute path
 mkdir -p ${WIKI_ROOT}
 rm -rf ${WIKI_ROOT}/wikicorpus_*
 python wikicleaner/wiki_downloader.py --language=zh --save_path=${WIKI_ROOT}
