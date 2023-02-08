@@ -72,9 +72,9 @@ class GPT(nn.Module):
 
         self.apply(self._init_weights)
         for pn, p in self.named_parameters():
-            if pn.endswith('c_proj.weight'):
-                torch.nn.init.normal_(p, mean=0.0, std=0.02/math.sqrt(2 * config.n_layer))
-    
+            if pn.endswith('attention_out_layer.2.weight') or pn.endswith('dense.weight'):
+                torch.nn.init.normal_(p, mean=0.0, std=0.02/math.sqrt(2 * config.num_layers))
+
     def _init_weights(self, module):
         if isinstance(module, nn.Linear):
             torch.nn.init.normal_(module.weight, mean=0.0, std=0.02)
@@ -127,6 +127,7 @@ if __name__ == '__main__':
     config = GPTConfig()
     print(config)
     model = GPT(config)
+    # print(model)
     fake_input = torch.rand(2, 10) * 100  # batch_size, seq_length
     fake_input = fake_input.long()
     pred, _ = model(fake_input)
