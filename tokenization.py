@@ -5,27 +5,6 @@ import unicodedata
 import six
 
 
-PRETRAINED_VOCAB_ARCHIVE_MAP = {
-    'bert-base-uncased': "https://s3.amazonaws.com/models.huggingface.co/bert/bert-base-uncased-vocab.txt",
-    'bert-large-uncased': "https://s3.amazonaws.com/models.huggingface.co/bert/bert-large-uncased-vocab.txt",
-    'bert-base-cased': "https://s3.amazonaws.com/models.huggingface.co/bert/bert-base-cased-vocab.txt",
-    'bert-large-cased': "https://s3.amazonaws.com/models.huggingface.co/bert/bert-large-cased-vocab.txt",
-    'bert-base-multilingual-uncased': "https://s3.amazonaws.com/models.huggingface.co/bert/bert-base-multilingual-uncased-vocab.txt",
-    'bert-base-multilingual-cased': "https://s3.amazonaws.com/models.huggingface.co/bert/bert-base-multilingual-cased-vocab.txt",
-    'bert-base-chinese': "https://s3.amazonaws.com/models.huggingface.co/bert/bert-base-chinese-vocab.txt",
-}
-
-PRETRAINED_VOCAB_POSITIONAL_EMBEDDINGS_SIZE_MAP = {
-    'bert-base-uncased': 512,
-    'bert-large-uncased': 512,
-    'bert-base-cased': 512,
-    'bert-large-cased': 512,
-    'bert-base-multilingual-uncased': 512,
-    'bert-base-multilingual-cased': 512,
-    'bert-base-chinese': 512,
-}
-
-
 def validate_case_matches_checkpoint(do_lower_case, init_checkpoint):
     """Checks whether the casing config is consistent with the checkpoint name."""
 
@@ -406,7 +385,7 @@ def _is_punctuation(char):
 
 # Just an example to use tokenizer
 if __name__ == '__main__':
-    tokenizer = FullTokenizer('multilingual-cased-vocab.txt')
+    tokenizer = FullTokenizer('datasets/multilingual-cased-vocab.txt')
     text = \
 """
 乔治·华盛顿（George Washington，1732年2月22日—1799年12月14日）， [1]  美国政治家、军事家、革命家，首任总统，美国开国元勋之一。 [2] 

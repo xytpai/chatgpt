@@ -1,6 +1,6 @@
 [PAD]
-[unused1]
-[unused2]
+[BOS]
+[EOS]
 [unused3]
 [unused4]
 [unused5]
