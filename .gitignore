@@ -130,3 +130,8 @@ dmypy.json
 .pyre/
 
 .vscode
+*.1
+*.2
+*.3
+*.4
+*/**/results
